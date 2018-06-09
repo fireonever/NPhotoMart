@@ -91,7 +91,9 @@
 	<script type="application/javascript">
 		
 		$(function(){
-
+setTimeout(function () { if (typeof (webExtensionWallet) === "undefined") {
+                alert("请先安装星云钱包插件.");
+            }}, 500);
 			
 		    var { Query, User } = AV;
 		    AV.init('miaTRMdU7c2D7Jzzs5OAnTt3-gzGzoHsz', 'nFgGOjSIMALRRW3WudwPGQ3K');
