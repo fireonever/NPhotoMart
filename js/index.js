@@ -1,7 +1,7 @@
 "use strict";
-    var dappContactAddress = "n1hAvfhPSJpbA1xN4kYkrWKncRqrQ93TAWi";
+    var dappContactAddress = "n1mZZWiKEkJgm3JoQcwXkHXJYGdCMRZ5ZZ5";
     var nebulas = require("nebulas"), Account = Account, neb = new nebulas.Neb();
-    neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"))
+    neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"))
     var NebPay = require("nebpay");
     var nebPay = new NebPay();
     var serialNumber;
