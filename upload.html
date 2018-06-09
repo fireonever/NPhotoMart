@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>星云图片集市</title>
+		
+	<link rel="stylesheet" href="./mdui/css/mdui.min.css">
+	<link rel="stylesheet" href="./css/index.css">
+
+	<script type="text/javascript" src="./dist/nebulas.js"></script>
+	<script type="text/javascript" src="./dist/nebPay.js"></script>
+	
+	</head>
+	
+	<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink" id="index-body">
+		<!--head menu-->
+		<div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
+		  	<div class="mdui-toolbar mdui-color-indigo">
+			    <a href="javascript:;" class="mdui-btn mdui-btn-icon" id="toggle"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+			   	<a href="index.html" class="mdui-typo-headline" id="authorName">星云图片集市</a>
+			   	<input type="hidden" id="userId" />
+			    <div class="mdui-toolbar-spacer"></div>
+
+		  	</div>
+		</div>
+
+		<!--left menu-->
+		<div class="mdui-drawer-body-left">
+			<div class="mdui-drawer" id="drawer"style="background: #FAFAFA;">
+				<ul class="mdui-list" mdui-collapse="{accordion: true}">
+					<li class="mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
+						<a class="mdui-list-item-content" id="home_panel" href="index.html">首页</a>
+					</li>
+					<li class="mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons">&#xeb3b;</i>
+						<a class="mdui-list-item-content" id="article_panel" href="order.html">我的订单</a>
+					</li>
+					<li class="mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons">&#xeb3d;</i>
+						<a class="mdui-list-item-content" id="cates_label_panel" href="upload.html">上传作品</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+  		
+		<div class="mdui-container" style="margin-top:32px;">
+		  	<div class="mdui-row">
+			    <div class="mdui-col-sm-8 mdui-col-md-8" style="padding:32px;">
+			      <div class="mdui-card">
+			        <div class="mdui-card-media">
+			          	<div class="mdui-container mdui-container-fluid" style="margin-top:30px;">
+						  	<div class="upload-image-box">
+								<div style="text-align:center;padding:20px;">
+									<div id="wrapper">
+										<div id="image-holder" style="min-height: 250px;"> </div>
+										<input id="fileUpload" type="file" accept="image/jpeg,image/jpg,image/png"/>
+									</div>
+								</div>
+							</div>
+						</div>
+			          </div>
+			      </div>
+			    </div>
+			   	<div class="mdui-col-sm-4 mdui-col-md-4" style="padding:32px 3px 32px 3px;" id="upload-photo-right">
+			      <div class="mdui-card detail-pannel" >
+						<div class="mdui-textfield mdui-textfield-floating-label" style="padding:32px 32px 32px 32px;">
+						  <label class="mdui-textfield-label">价格</label>
+						  <input class="mdui-textfield-input upload-price" type="text"  required/>
+						  <div class="mdui-textfield-error">价格不能为空</div>
+						</div>
+						<div class="mdui-col add_to_cart">
+					    <button class="mdui-btn mdui-btn-block mdui-btn-block mdui-color-indigo mdui-ripple" id="upload_photo_btn" ><i class="mdui-icon material-icons">file_upload</i>上传</button>
+					  </div>
+					  <div class="mdui-col add_to_cart">
+					  </div>
+			      
+			   	</div>
+			</div>
+  	
+
+	</body>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+	<script src="./mdui/js/mdui.min.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/av-min.js"></script>
+	<script src="./js/sha1.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.js"></script>
+	
+	<script type="application/javascript">
+		
+		$(function(){
+
+			
+		    var { Query, User } = AV;
+		    AV.init('miaTRMdU7c2D7Jzzs5OAnTt3-gzGzoHsz', 'nFgGOjSIMALRRW3WudwPGQ3K');
+
+			var inst = new mdui.Drawer('#drawer');
+			// method
+			document.getElementById('toggle').addEventListener('click', function () {
+			  inst.toggle();
+			});
+			inst.close();
+			inst.toggle();
+
+			
+		})
+	</script>
+	
+</html>
